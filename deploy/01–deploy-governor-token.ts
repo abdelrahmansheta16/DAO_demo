@@ -18,5 +18,9 @@ const deployGovernanceToken: DeployFunction = async (
   });
 
   log(`01-Deployed 'GovernanceToken' at ${governanceToken.address}`);
+
+  // Delegate votes to deployer.
+  await delegate(governanceToken.address, deployer);
+  log(`Delegated votes to ${deployer} `);
 };
 
