@@ -16,4 +16,17 @@ const deployGovernorContract: DeployFunction = async (
   const governanceToken = await get("GovernanceToken");
   const timeLock = await get("TimeLock");
 
+  log("Deploying the Governor contract...");
+  const governorContract = await deploy("GovernorContract", {
+    from: deployer,
+    args: [
+      governanceToken.address,
+      timeLock.address,
+      VOTING_DELAY,
+      VOTING_PERIOD,
+      QUORUM_PERCENTAGE,
+    ],
+    log: true,
+    waitConfirmations: 1, // optional
+  });
 };
