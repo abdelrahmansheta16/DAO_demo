@@ -32,3 +32,6 @@ const deployGovernorContract: DeployFunction = async (
 
   log(`03-Deployed 'GovernorContract' at ${governorContract.address} `);
 };
+
+export default deployGovernorContract;
+deployGovernorContract.tags = ["all", "governor"];
