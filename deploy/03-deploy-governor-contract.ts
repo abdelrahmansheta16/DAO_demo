@@ -29,4 +29,6 @@ const deployGovernorContract: DeployFunction = async (
     log: true,
     waitConfirmations: 1, // optional
   });
+
+  log(`03-Deployed 'GovernorContract' at ${governorContract.address} `);
 };
