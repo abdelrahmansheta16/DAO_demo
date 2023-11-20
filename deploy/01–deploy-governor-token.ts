@@ -24,3 +24,8 @@ const deployGovernanceToken: DeployFunction = async (
   log(`Delegated votes to ${deployer} `);
 };
 
+const delegate = async (
+  governanceTokenAddress: string,
+  delegatedAccount: string
+) => {
+};
