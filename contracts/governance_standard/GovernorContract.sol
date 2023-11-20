@@ -33,4 +33,15 @@ contract GovernorContract is
 		GovernorVotesQuorumFraction(_quorumPercentage)
 		GovernorTimelockControl(_timelock)
 	{}
+
+	// The following functions are overrides required by Solidity.
+
+	function votingDelay()
+		public
+		view
+		override(IGovernor, GovernorSettings)
+		returns (uint256)
+	{
+		return super.votingDelay();
+	}
 }
