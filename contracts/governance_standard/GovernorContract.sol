@@ -53,4 +53,13 @@ contract GovernorContract is
 	{
 		return super.votingPeriod();
 	}
+
+	function quorum(uint256 blockNumber)
+		public
+		view
+		override(IGovernor, GovernorVotesQuorumFraction)
+		returns (uint256)
+	{
+		return super.quorum(blockNumber);
+	}
 }
