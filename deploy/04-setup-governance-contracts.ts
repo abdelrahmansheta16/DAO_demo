@@ -9,4 +9,7 @@ const setupGovernanceContracts: DeployFunction = async (
   const { getNamedAccounts, deployments, network } = hre;
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
+
+  const timeLock = await ethers.getContract("TimeLock", deployer);
+  const governor = await ethers.getContract("GovernorContract", deployer);
 };
