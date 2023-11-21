@@ -28,4 +28,8 @@ const delegate = async (
   governanceTokenAddress: string,
   delegatedAccount: string
 ) => {
+  const governanceToken = await ethers.getContractAt(
+    "GovernanceToken",
+    governanceTokenAddress
+  );
 };
