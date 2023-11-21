@@ -44,4 +44,13 @@ contract GovernorContract is
 	{
 		return super.votingDelay();
 	}
+
+	function votingPeriod()
+		public
+		view
+		override(IGovernor, GovernorSettings)
+		returns (uint256)
+	{
+		return super.votingPeriod();
+	}
 }
