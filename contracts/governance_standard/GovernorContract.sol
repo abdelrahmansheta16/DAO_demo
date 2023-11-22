@@ -71,4 +71,13 @@ contract GovernorContract is
 	{
 		return super.getVotes(account, blockNumber);
 	}
+
+	function state(uint256 proposalId)
+		public
+		view
+		override(Governor, GovernorTimelockControl)
+		returns (ProposalState)
+	{
+		return super.state(proposalId);
+	}
 }
