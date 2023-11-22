@@ -62,4 +62,13 @@ contract GovernorContract is
 	{
 		return super.quorum(blockNumber);
 	}
+
+	function getVotes(address account, uint256 blockNumber)
+		public
+		view
+		override(IGovernor, Governor)
+		returns (uint256)
+	{
+		return super.getVotes(account, blockNumber);
+	}
 }
