@@ -32,4 +32,9 @@ const delegate = async (
     "GovernanceToken",
     governanceTokenAddress
   );
+  const txResponse = await governanceToken.delegate(delegatedAccount);
+  await txResponse.wait(1);
+  console.log(
+    `Checkpoints: ${await governanceToken.numCheckpoints(delegatedAccount)}`
+  );
 };
