@@ -38,3 +38,6 @@ const delegate = async (
     `Checkpoints: ${await governanceToken.numCheckpoints(delegatedAccount)}`
   );
 };
+
+export default deployGovernanceToken;
+deployGovernanceToken.tags = ["all", "governor"];
