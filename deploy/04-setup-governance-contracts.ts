@@ -26,4 +26,6 @@ const setupGovernanceContracts: DeployFunction = async (
 
   const revokeTx = await timeLock.revokeRole(adminRole, deployer);
   await revokeTx.wait(1);
+
+  log("04-Roles setup OK. Deployer is no longer the admin for 'TimeLock'.");
 };
