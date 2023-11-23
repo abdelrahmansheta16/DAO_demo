@@ -20,4 +20,7 @@ const setupGovernanceContracts: DeployFunction = async (
 
   const proposerTx = await timeLock.grantRole(proposerRole, governor.address);
   await proposerTx.wait(1);
+
+  const executorTx = await timeLock.grantRole(executorRole, ADDRESS_ZERO);
+  await executorTx.wait(1);
 };
