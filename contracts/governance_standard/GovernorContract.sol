@@ -80,4 +80,13 @@ contract GovernorContract is
 	{
 		return super.state(proposalId);
 	}
+
+	function propose(
+		address[] memory targets,
+		uint256[] memory values,
+		bytes[] memory calldatas,
+		string memory description
+	) public override(Governor, IGovernor) returns (uint256) {
+		return super.propose(targets, values, calldatas, description);
+	}
 }
