@@ -89,4 +89,13 @@ contract GovernorContract is
 	) public override(Governor, IGovernor) returns (uint256) {
 		return super.propose(targets, values, calldatas, description);
 	}
+
+	function proposalThreshold()
+		public
+		view
+		override(Governor, GovernorSettings)
+		returns (uint256)
+	{
+		return super.proposalThreshold();
+	}
 }
