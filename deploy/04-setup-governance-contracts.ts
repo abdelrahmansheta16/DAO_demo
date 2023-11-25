@@ -29,3 +29,6 @@ const setupGovernanceContracts: DeployFunction = async (
 
   log("04-Roles setup OK. Deployer is no longer the admin for 'TimeLock'.");
 };
+
+export default setupGovernanceContracts;
+setupGovernanceContracts.tags = ["all", "setup"];
