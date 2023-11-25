@@ -8,4 +8,12 @@ const deployTimeLock: DeployFunction = async (
   const { getNamedAccounts, deployments, network } = hre;
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
+
+  log("Deploying the TimeLock contract...");
+  const timeLock = await deploy("TimeLock", {
+    from: deployer,
+    args: [MIN_DELAY, PROPOSERS, EXECUTORS],
+    log: true,
+    // waitConfirmations: 1,
+  });
 };
