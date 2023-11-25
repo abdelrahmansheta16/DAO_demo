@@ -8,4 +8,13 @@ const deployBox: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const { deploy, log } = deployments;
 
   log("Deploying 'Box' Contract....");
+
+  const box = await deploy("Box", {
+    from: deployer,
+    args: [],
+    log: true,
+    waitConfirmations: 1,
+  });
+
+  log(`05-Deployed 'Box' at ${box.address}`);
 };
