@@ -12,4 +12,14 @@ contract GovernanceToken is ERC20Votes {
 	{
 		_mint(msg.sender, s_maxSupply);
 	}
+
+	// The functions below are overrides required by Solidity.
+
+	function _afterTokenTransfer(
+		address from,
+		address to,
+		uint256 amount
+	) internal override(ERC20Votes) {
+		super._afterTokenTransfer(from, to, amount);
+	}
 }
