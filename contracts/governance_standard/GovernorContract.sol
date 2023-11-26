@@ -108,4 +108,13 @@ contract GovernorContract is
 	) internal override(Governor, GovernorTimelockControl) {
 		super._execute(proposalId, targets, values, calldatas, descriptionHash);
 	}
+
+	function _cancel(
+		address[] memory targets,
+		uint256[] memory values,
+		bytes[] memory calldatas,
+		bytes32 descriptionHash
+	) internal override(Governor, GovernorTimelockControl) returns (uint256) {
+		return super._cancel(targets, values, calldatas, descriptionHash);
+	}
 }
