@@ -16,4 +16,6 @@ const deployTimeLock: DeployFunction = async (
     log: true,
     // waitConfirmations: 1,
   });
+
+  log(`02-Deployed 'TimeLock' at ${timeLock.address}`);
 };
