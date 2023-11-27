@@ -76,5 +76,8 @@ describe("Governor Flow", async () => {
       [encodedFunctionCall],
       descriptionHash
     );
+    await queueTx.wait(1);
+    await moveTime(MIN_DELAY + 1);
+    await moveBlocks(1);
   });
 });
