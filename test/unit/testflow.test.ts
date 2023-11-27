@@ -82,5 +82,16 @@ describe("Governor Flow", async () => {
 
     proposalState = await governor.state(proposalId);
     console.log(`Current Proposal State: ${proposalState}`);
+
+    console.log("Executing...");
+    console.log;
+    const exTx = await governor.execute(
+      [box.address],
+      [0],
+      [encodedFunctionCall],
+      descriptionHash
+    );
+    await exTx.wait(1);
+    console.log((await box.retrieve()).toString());
   });
 });
