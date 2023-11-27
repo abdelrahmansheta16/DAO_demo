@@ -19,3 +19,6 @@ const deployTimeLock: DeployFunction = async (
 
   log(`02-Deployed 'TimeLock' at ${timeLock.address}`);
 };
+
+export default deployTimeLock;
+deployTimeLock.tags = ["all", "timelock"];
