@@ -79,5 +79,8 @@ describe("Governor Flow", async () => {
     await queueTx.wait(1);
     await moveTime(MIN_DELAY + 1);
     await moveBlocks(1);
+
+    proposalState = await governor.state(proposalId);
+    console.log(`Current Proposal State: ${proposalState}`);
   });
 });
