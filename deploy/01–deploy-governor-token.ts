@@ -8,5 +8,13 @@ const deployGovernanceToken: DeployFunction = async (
   const { getNamedAccounts, deployments, network } = hre;
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
+
+  log("Deploying Governance Token....");
+  const governanceToken = await deploy("GovernanceToken", {
+    from: deployer,
+    log: true,
+    args: [],
+    // waitConfirmations: 1, // For non-dev netwworks so we can verify
+  });
 };
 
