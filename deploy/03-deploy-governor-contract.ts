@@ -5,3 +5,12 @@ import {
   VOTING_DELAY,
   VOTING_PERIOD,
 } from "../hardhat-helper-config";
+
+const deployGovernorContract: DeployFunction = async (
+  hre: HardhatRuntimeEnvironment
+) => {
+  const { getNamedAccounts, deployments, network } = hre;
+  const { deploy, log, get } = deployments;
+  const { deployer } = await getNamedAccounts();
+
+};
