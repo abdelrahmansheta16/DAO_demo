@@ -22,4 +22,9 @@ export async function makeProposal(
     functionToCall,
     args
   );
+
+  console.log("Function to call: ", functionToCall);
+  console.log("Args: ", args);
+  console.log("Encoded Function Call: ", encodedFunctionCall);
+  console.log("Proposal Description: ", proposalDescription);
 }
