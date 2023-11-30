@@ -55,4 +55,8 @@ export async function makeProposal(
       [network.config.chainId!.toString()]: [proposalId.toString()],
     })
   );
+
+  const proposalState = await governor.state(proposalId);
+  // The state of the proposal. 1 is not passed. 0 is passed.
+  console.log(`Current Proposal State: ${proposalState}`);
 }
