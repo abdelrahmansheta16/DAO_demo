@@ -13,4 +13,7 @@ const deployGovernorContract: DeployFunction = async (
   const { deploy, log, get } = deployments;
   const { deployer } = await getNamedAccounts();
 
+  const governanceToken = await get("GovernanceToken");
+  const timeLock = await get("TimeLock");
+
 };
