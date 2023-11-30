@@ -27,4 +27,11 @@ export async function makeProposal(
   console.log("Args: ", args);
   console.log("Encoded Function Call: ", encodedFunctionCall);
   console.log("Proposal Description: ", proposalDescription);
+
+  const proposeTx = await governor.propose(
+    [box.address],
+    [0],
+    [encodedFunctionCall],
+    proposalDescription
+  );
 }
