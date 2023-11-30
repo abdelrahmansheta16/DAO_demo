@@ -23,4 +23,11 @@ describe("Governor Flow", async () => {
   let box: Box;
   const voteWay = 1; // for
   const reason = "I lika do da cha cha";
+  beforeEach(async () => {
+    await deployments.fixture(["all"]);
+    governor = await ethers.getContract("GovernorContract");
+    timeLock = await ethers.getContract("TimeLock");
+    governanceToken = await ethers.getContract("GovernanceToken");
+    box = await ethers.getContract("Box");
+  });
 });
