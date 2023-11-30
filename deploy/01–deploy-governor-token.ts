@@ -16,5 +16,7 @@ const deployGovernanceToken: DeployFunction = async (
     args: [],
     // waitConfirmations: 1, // For non-dev netwworks so we can verify
   });
+
+  log(`01-Deployed 'GovernanceToken' at ${governanceToken.address}`);
 };
 
