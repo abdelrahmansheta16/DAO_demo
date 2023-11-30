@@ -61,5 +61,10 @@ describe("Governor Flow", async () => {
       voteWay,
       reason
     );
+    await voteTx.wait(1);
+    proposalState = await governor.state(proposalId);
+    assert.equal(proposalState.toString(), "1");
+    console.log(`Current Proposal State: ${proposalState}`);
+    await moveBlocks(VOTING_PERIOD + 1);
   });
 });
