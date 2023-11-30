@@ -55,5 +55,11 @@ describe("Governor Flow", async () => {
     console.log(`Current Proposal State: ${proposalState}`);
 
     await moveBlocks(VOTING_DELAY + 1);
+    // vote
+    const voteTx = await governor.castVoteWithReason(
+      proposalId,
+      voteWay,
+      reason
+    );
   });
 });
