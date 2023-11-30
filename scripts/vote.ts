@@ -32,4 +32,8 @@ export async function vote() {
   if (developmentChains.includes(network.name)) {
     await moveBlocks(VOTING_PERIOD + 1);
   }
+
+  proposalState = await governor.state(proposalId);
+  console.log(`Proposal State after voting period is over: ${proposalState}`);
+  console.log("Voting complete.");
 }
