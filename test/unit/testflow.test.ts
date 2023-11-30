@@ -42,5 +42,11 @@ describe("Governor Flow", async () => {
     const encodedFunctionCall = box.interface.encodeFunctionData(FUNC, [
       FUNC_ARGS,
     ]);
+    const proposeTx = await governor.propose(
+      [box.address],
+      [0],
+      [encodedFunctionCall],
+      DESCRIPTION
+    );
   });
 });
