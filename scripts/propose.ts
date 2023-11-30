@@ -9,3 +9,12 @@ import {
 } from "../hardhat-helper-config";
 import * as fs from "fs";
 import { moveBlocks } from "../utils/timetravel";
+
+export async function makeProposal(
+  functionToCall: string,
+  args: number[],
+  proposalDescription: string
+) {
+  const governor = await ethers.getContract("GovernorContract");
+  const box = await ethers.getContract("Box");
+}
