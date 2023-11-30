@@ -34,4 +34,6 @@ export async function makeProposal(
     [encodedFunctionCall],
     proposalDescription
   );
+
+  const proposeReceipt = await proposeTx.wait(1);
 }
