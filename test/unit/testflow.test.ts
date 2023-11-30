@@ -36,4 +36,11 @@ describe("Governor Flow", async () => {
       "Ownable: caller is not the owner"
     );
   });
+
+  it("proposes, votes, waits, queues, and then executes", async () => {
+    // propose
+    const encodedFunctionCall = box.interface.encodeFunctionData(FUNC, [
+      FUNC_ARGS,
+    ]);
+  });
 });
