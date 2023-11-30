@@ -30,4 +30,10 @@ describe("Governor Flow", async () => {
     governanceToken = await ethers.getContract("GovernanceToken");
     box = await ethers.getContract("Box");
   });
+
+  it("can only be changed through governance", async () => {
+    await expect(box.store(55)).to.be.revertedWith(
+      "Ownable: caller is not the owner"
+    );
+  });
 });
