@@ -37,3 +37,10 @@ export async function vote() {
   console.log(`Proposal State after voting period is over: ${proposalState}`);
   console.log("Voting complete.");
 }
+
+vote()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.log(err);
+    process.exit(1);
+  });
