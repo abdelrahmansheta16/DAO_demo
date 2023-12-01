@@ -24,4 +24,13 @@ export async function queueAndExecute(
     ethers.utils.toUtf8Bytes(proposalDescription)
   );
   // could also use ethers.utils.id(PROPOSAL_DESCRIPTION)
+
+  const governor = await ethers.getContract("GovernorContract");
+  const queueTx = await governor.queue(
+    [box.address],
+    [0],
+    [encodedFunctionCall],
+    descriptionHash
+  );
+  queueTx.wait(1);
 }
