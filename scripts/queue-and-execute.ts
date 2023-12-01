@@ -54,3 +54,10 @@ export async function queueAndExecute(
   console.log("Executed....");
   console.log(`Box value: ${await box.retrieve()}`);
 }
+
+queueAndExecute(FUNC, [FUNC_ARGS], DESCRIPTION)
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.log(err);
+    process.exit(1);
+  });
