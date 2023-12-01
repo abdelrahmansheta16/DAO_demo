@@ -24,4 +24,7 @@ export async function vote() {
     VOTE_REASON
   );
   voteTx.wait(1);
+
+  let proposalState = await governor.state(proposalId);
+  console.log(`Proposal State before voting period is over: ${proposalState}`);
 }
