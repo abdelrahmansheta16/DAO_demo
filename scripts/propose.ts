@@ -41,4 +41,6 @@ export async function makeProposal(
   if (developmentChains.includes(network.name)) {
     await moveBlocks(VOTING_DELAY + 1);
   }
+
+  const proposalId = proposeReceipt.events[0].args.proposalId;
 }
