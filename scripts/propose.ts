@@ -60,3 +60,10 @@ export async function makeProposal(
   // The state of the proposal. 1 is not passed. 0 is passed.
   console.log(`Current Proposal State: ${proposalState}`);
 }
+
+makeProposal(FUNC, [FUNC_ARGS], DESCRIPTION)
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.log(err);
+    process.exit(1);
+  });
