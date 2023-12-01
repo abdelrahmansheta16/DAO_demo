@@ -36,4 +36,9 @@ export async function makeProposal(
   );
 
   const proposeReceipt = await proposeTx.wait(1);
+
+  // Speed up time so we can vote!
+  if (developmentChains.includes(network.name)) {
+    await moveBlocks(VOTING_DELAY + 1);
+  }
 }
