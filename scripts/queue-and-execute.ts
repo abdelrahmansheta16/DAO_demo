@@ -50,4 +50,7 @@ export async function queueAndExecute(
     descriptionHash
   );
   executeTx.wait(1);
+
+  console.log("Executed....");
+  console.log(`Box value: ${await box.retrieve()}`);
 }
