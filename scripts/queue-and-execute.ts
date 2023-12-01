@@ -33,4 +33,6 @@ export async function queueAndExecute(
     descriptionHash
   );
   queueTx.wait(1);
+
+  console.log("Proposal queued....");
 }
