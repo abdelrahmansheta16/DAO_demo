@@ -43,4 +43,9 @@ export async function makeProposal(
   }
 
   const proposalId = proposeReceipt.events[0].args.proposalId;
+
+  // save the proposalId
+  // let proposals = JSON.parse(fs.readFileSync(PROPOSAL_FILE, "utf8"));
+  // proposals[network.config.chainId!.toString()].push(proposalId.toString());
+  // fs.writeFileSync(PROPOSAL_FILE, JSON.stringify(proposals));
 }
