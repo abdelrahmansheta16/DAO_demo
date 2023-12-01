@@ -19,4 +19,9 @@ export async function queueAndExecute(
     functionToCall,
     args
   );
+
+  const descriptionHash = ethers.utils.keccak256(
+    ethers.utils.toUtf8Bytes(proposalDescription)
+  );
+  // could also use ethers.utils.id(PROPOSAL_DESCRIPTION)
 }
