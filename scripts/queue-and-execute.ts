@@ -14,4 +14,9 @@ export async function queueAndExecute(
   proposalDescription: string
 ) {
   const box = await ethers.getContract("Box");
+
+  const encodedFunctionCall = box.interface.encodeFunctionData(
+    functionToCall,
+    args
+  );
 }
