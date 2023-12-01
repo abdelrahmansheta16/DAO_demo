@@ -48,4 +48,11 @@ export async function makeProposal(
   // let proposals = JSON.parse(fs.readFileSync(PROPOSAL_FILE, "utf8"));
   // proposals[network.config.chainId!.toString()].push(proposalId.toString());
   // fs.writeFileSync(PROPOSAL_FILE, JSON.stringify(proposals));
+
+  fs.writeFileSync(
+    PROPOSAL_FILE,
+    JSON.stringify({
+      [network.config.chainId!.toString()]: [proposalId.toString()],
+    })
+  );
 }
