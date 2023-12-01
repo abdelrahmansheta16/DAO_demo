@@ -35,4 +35,10 @@ export async function queueAndExecute(
   queueTx.wait(1);
 
   console.log("Proposal queued....");
+
+  // Forward past MIN_DELAY
+  if (developmentChains.includes(network.name)) {
+    await moveTime(MIN_DELAY + 1);
+    await moveBlocks(1);
+  }
 }
